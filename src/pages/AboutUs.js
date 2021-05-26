@@ -1,10 +1,12 @@
 import AboutSection from "../components/AboutSection";
+import ServicesSection from "../components/ServicesSection";
 
 function AboutUs() {
     return (
-        <div className="App">
+        <>
             <AboutSection />
-        </div>
+            <ServicesSection />
+        </>
     );
 }
 

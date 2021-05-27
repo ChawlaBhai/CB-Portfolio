@@ -1,9 +1,9 @@
 import home1 from "../img/home1.png";
-import styled from "styled-components";
+import {Section, Description, Image, Hide} from "../styles";
 
 const AboutSection = () => {
     return (
-        <About>
+        <Section>
             <Description>
                 <div className="title">
                     <Hide>
@@ -28,37 +28,8 @@ const AboutSection = () => {
             <Image>
                 <img src={home1} alt="guy with the camera" />
             </Image>
-        </About>
+        </Section>
     );
 };
-
-//Styled-Components
-const About = styled.div`
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5rem 10rem;
-    color: white;
-`;
-const Description = styled.div`
-    flex: 1;
-    padding-right: 5rem;
-    h2 {
-        font-weight: lighter;
-    }
-`;
-const Image = styled.div`
-    flex: 1;
-    overflow: hidden;
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: 80vh;
-    }
-`;
-const Hide = styled.div`
-    overflow: hidden;
-`;
 
 export default AboutSection;

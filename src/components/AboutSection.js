@@ -1,23 +1,31 @@
+import { motion } from "framer-motion";
 import home1 from "../img/home1.png";
-import {Section, Description, Image, Hide} from "../styles";
+import { Section, Description, Image, Hide } from "../styles";
 
 const AboutSection = () => {
     return (
         <Section>
             <Description>
-                <div className="title">
+                <motion.div
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
+                    className="title"
+                >
                     <Hide>
-                        <h2>We work to make</h2>
+                        <motion.h2 variants={titleAnim}>
+                            We work to make
+                        </motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>
-                            your <span>dreams</span> come
-                        </h2>
+                        <motion.h2 variants={titleAnim}>
+                            your <span>dreams</span>
+                        </motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>true.</h2>
+                        <motion.h2 variants={titleAnim}>come true.</motion.h2>
                     </Hide>
-                </div>
+                </motion.div>
                 <p>
                     Contact us for any photography or videography ideas that you
                     have. We will try are best to show you up your amazing
@@ -30,6 +38,18 @@ const AboutSection = () => {
             </Image>
         </Section>
     );
+};
+
+const titleAnim = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: { duration: 1.3 },
+    },
+};
+const container = {
+    hidden: { x: 100,},
+    show: { x: 0, transition: { duration: 1 , ease:"easeOut", staggerChildren: 0.25} },
 };
 
 export default AboutSection;
